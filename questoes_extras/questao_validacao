@@ -1,0 +1,30 @@
+arroba = False
+ponto = False
+checkBar = 0
+
+while not(arroba and ponto):
+    email = input("Escreva seu e-mail: ")
+
+    for x in email:
+        if x == "@":
+            arroba = True
+        elif x == "." and arroba == True:
+            ponto = True
+            break
+    
+    if not(arroba and ponto):
+        print('E-mail inválido. Tente novamente!\n\n')
+        
+while checkBar != 2:
+    data_nascimento = input("Coloque sua data de nascimento: ")
+    checkBar = 0
+    
+    for x in data_nascimento:
+        if (not x.isdigit()):
+            if x == '/':
+                checkBar += 1
+            else:
+                checkBar = 0
+                break
+    if checkBar != 2:
+        print("Data de nascimento inválida. Tente novamente!")
