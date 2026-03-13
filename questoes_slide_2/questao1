@@ -1,0 +1,42 @@
+import os
+
+lista = []
+programEnd = False
+
+while not programEnd:
+    print('Selecione a opção que deseja:\n\n1- Ver Lista\n2- Adicionar Elmento\n3- Remover elemento\n0- Encerrar Programa\n')
+    a = input()
+    os.system('clear')
+    if a == "1":
+        print("------------------\n")
+        for x in lista:
+            print(x + "\n-------------------\n")
+        input("Pressione Enter para continuar ")
+        os.system('clear')
+    elif a == "2":
+        newItem = input("Qual item você deseja adicionar no carrinho? ")
+        lista.append(newItem)
+        input("Item Adicionado!\n\nPressione Enter para continuar ")
+        os.system('clear')
+    elif a == "3":
+        done = False
+        while not done:
+            delItem = input("Qual item você deseja remover do carrinho? ")
+            os.system('clear')
+            if not(delItem in lista):
+                print("Item não encontrado no carrinho, tente novamente...")
+            elif delItem == "-1":
+                print("Operação cancelada com sucesso!")
+                done = True
+            else:
+                lista.remove(delItem)
+                done = True
+                print("Item excluído com sucesso!\n")
+        input("Pressione Enter para continuar ")
+        os.system('clear')
+    elif a == "0":
+        programEnd = True
+print("Programa Encerrado com Sucesso!")
+    
+        
+        
